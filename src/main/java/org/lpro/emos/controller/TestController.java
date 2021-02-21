@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@Api(tags = "测试集")
-public class HelloController {
+@Api(tags = "服务器测试接口集")
+public class TestController {
 
-    @GetMapping("/hello")
-    @ApiOperation("最简单的测试方法")
-    public ResultBody<TbUser> hello(){
-        TbUser user = new TbUser();
-        user.setId(6666);
-        user.setName("jack");
-        return ResultBody.ok(user);
+    @GetMapping("/pass-test")
+    @ApiOperation("测试API")
+    public ResultBody passTest(){
+        return ResultBody.ok("服务器正常运行中……");
     }
 }
